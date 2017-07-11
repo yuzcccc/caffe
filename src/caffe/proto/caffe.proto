@@ -407,7 +407,6 @@ message LayerParameter {
   optional BNParameter bn_param=148;
   optional PermuteParameter permute_param = 149;
   optional RolloutParameter rollout_param = 150;
-  optional ShakeoutParameter shakeout_param = 151;
 }
 
 // Message that stores parameters used to apply transformation
@@ -1432,11 +1431,4 @@ message PermuteParameter {
 message RolloutParameter {
   optional bool has_header = 1 [default = false]; //whether has a header to indicate the real number of elements
   optional uint32 num_output = 2; //max dimensionality of each input data
-}
-
-message ShakeoutParameter {
-  optional float dropout_ratio = 1 [default = 0.5]; // dropout ratio
-  optional float shakeout_scale = 2 [default = 0.1]; // shakeout_scale 
-  optional float tanh_smooth_scale = 3 [default = 1]; // tanh_smooth_scale
-  optional string operate_layer_type = 4; 
 }
